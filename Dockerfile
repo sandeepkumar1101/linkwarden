@@ -22,6 +22,8 @@ RUN apt-get update
 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
+ENV PATH="/root/.cargo/bin:${PATH}"
+
 RUN cargo install monolith
 
 RUN npx playwright install-deps && \
